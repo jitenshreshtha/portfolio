@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
 
 
 function AdminEducation() {
@@ -15,8 +17,23 @@ function AdminEducation() {
             [e.target.name]: e.target.value
         })
     }
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:5000/api/education", formData);
+            console.log("Education added:", response.data);
+            toast.success("Education added successfully");
+            setFormData({
+                degree:"",
+                institution:"",
+                startDate:"",
+                endDate:""
+            })
+        } catch (error) {
+            console.error("Error adding education:", error);
+            toast.error("Error adding education");
+        }
+
     }
     return (
         <div>
@@ -37,6 +54,8 @@ function AdminEducation() {
                 <button>Add Education</button>
 
             </form>
+
+            <ToastContainer position="top-right" autoClose={3000} />
         </div>
     )
 }
