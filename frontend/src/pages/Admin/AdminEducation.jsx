@@ -20,14 +20,14 @@ function AdminEducation() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/education", formData);
+            const response = await axios.post("http://localhost:5000/education/addEducation", formData);
             console.log("Education added:", response.data);
             toast.success("Education added successfully");
             setFormData({
-                degree:"",
-                institution:"",
-                startDate:"",
-                endDate:""
+                degree: "",
+                institution: "",
+                startDate: "",
+                endDate: ""
             })
         } catch (error) {
             console.error("Error adding education:", error);
@@ -38,20 +38,30 @@ function AdminEducation() {
     return (
         <div>
             <h3>Education</h3>
-            <form onSubmit={handleSubmit}>
-                <label>Degree:</label>
-                <input type="text" name="degree" placeholder="Enter your degree" value={formData.degree} onChange={handleChange} />
+            <form onSubmit={handleSubmit} className="mx-auto max-w-lg flex flex-col gap-4 m-8 bg-gray-100 p-4 rounded-lg shadow">
+                <div className="m-auto flex flex-col gap-4">
+                    <div>
+                        <label className="mb-1 font-medium">Degree:</label>
+                        <input type="text" name="degree" placeholder="Enter your degree" value={formData.degree} onChange={handleChange} className="border px-4 py-2 rounded-lg ml-4" />
+                    </div>
 
-                <label>Institution:</label>
-                <input type="text" name="institution" placeholder="Enter your institution" value={formData.institution} onChange={handleChange} />
+                    <div>
+                        <label className="mb-1 font-medium">Institution:</label>
+                        <input type="text" name="institution" placeholder="Enter your institution" value={formData.institution} onChange={handleChange} className="border px-4 py-2 rounded-lg ml-4" />
+                    </div>
 
-                <label>Start Date:</label>
-                <input type="Date" name="startDate" placeholder="Enter your start date" value={formData.startDate} onChange={handleChange} />
+                    <div>
+                        <label className="mb-1 font-medium">Start Date:</label>
+                        <input type="Date" name="startDate" placeholder="Enter your start date" value={formData.startDate} onChange={handleChange} className="border px-4 py-2 rounded-lg ml-4" />
+                    </div>
 
-                <label>End Date:</label>
-                <input type="Date" name="endDate" placeholder="Enter your end date" value={formData.endDate} onChange={handleChange} />
+                    <div>
+                        <label className="mb-1 font-medium">End Date:</label>
+                        <input type="Date" name="endDate" placeholder="Enter your end date" value={formData.endDate} onChange={handleChange} className="border px-4 py-2 rounded-lg ml-4" />
+                    </div>
+                </div>
 
-                <button>Add Education</button>
+                <button className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 mt-4">Add Education</button>
 
             </form>
 

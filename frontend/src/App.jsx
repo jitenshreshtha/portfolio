@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import AdminEducation from './pages/Admin/AdminEducation';
 import AdminExperience from './pages/Admin/AdminExperience';
 import AdminProject from './pages/Admin/AdminProject';
+import Ratingpage from './pages/Ratingpage';
 
 function App(){
   return(
@@ -16,6 +17,8 @@ function App(){
           <Route path='/me/education' element={<AdminEducation />}/>
           <Route path='/me/experience' element={<AdminExperience />} />
           <Route path='/me/project' element={<AdminProject />} />
+          <Route path='/rate' element={<Ratingpage />} />
+
         </Routes>
       </Router>
 
