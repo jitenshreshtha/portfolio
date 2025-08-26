@@ -46,14 +46,6 @@ function Header() {
               Hire Me
             </a>
           </li>
-          <li>
-            <Link
-              to="/rate"
-              className="transition-colors hover:text-primary"
-            >
-              Rate Me
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>

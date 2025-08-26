@@ -34,22 +34,24 @@ function Introduction() {
                         to deliver effective solutions. Let’s connect and bring ideas to life!
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-12">
-                        <button className="px-8 py-3 text-lg rounded-2xl font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white shadow-lg hover:opacity-90 transition-all duration-300 glow-effect">
+                        <button
+                            onClick={() => document.getElementById("project").scrollIntoView({ behavior: "smooth" })}
+                            className="px-8 py-3 text-lg rounded-2xl font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white shadow-lg hover:opacity-90 transition-all duration-300 glow-effect">
                             View My Work
                         </button>
-                        <button className="px-8 py-3 text-lg rounded-2xl font-semibold border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
+                        <a href="/Jiten_Shreshtha_FullStack_Resume.docx" className="px-8 py-3 text-lg rounded-2xl font-semibold border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
                             Download CV
-                        </button>
+                        </a>
                     </div>
 
                     <div className="flex gap-6 justify-center md:justify-start">
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                        <a href="https://github.com/jitenshreshtha" className="text-gray-400 hover:text-primary transition-colors">
                             <Github size={28} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                        <a href="https://www.linkedin.com/in/jiten-shreshtha-23855521a/" className="text-gray-400 hover:text-primary transition-colors">
                             <Linkedin size={28} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                        <a href="mailto:jitenshreshtha07@gmail.com" className="text-gray-400 hover:text-primary transition-colors">
                             <Mail size={28} />
                         </a>
                     </div>

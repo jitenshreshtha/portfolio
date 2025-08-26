@@ -9,6 +9,19 @@ const projectSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    technologies: {
+        type: [String],
+        required: true
+    },
+    github: {
+        type: String
+    },
+    live: {
+        type: String
+    },
+    image: {
+        type: String
+    },
     startDate: {
         type: Date,
         required: true

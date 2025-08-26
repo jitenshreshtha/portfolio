@@ -1,13 +1,27 @@
-import React from "react";
+import React,{useRef} from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 function HireMe() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_xouk50h', 'template_1ecsitg', form.current, 'tUoP-0JDx16DPtSXY')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <section className="py-20 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Get In <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-rose-500">Touch</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
@@ -57,13 +71,14 @@ function HireMe() {
 
           {/* Hire Me Form */}
           <div className="relative bg-black/40 backdrop-blur-md rounded-2xl shadow-lg p-8 animate-slide-up">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={sendEmail} ref={form}>
               {/* Name */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block text-gray-300">First Name</label>
                   <input 
                     type="text" 
+                    name="first_name"
                     placeholder="Jiten"
                     className="w-full px-4 py-2 rounded-xl bg-black/30 text-white placeholder-gray-400 border border-gray-700 focus:border-purple-500 outline-none transition"
                   />
@@ -72,6 +87,7 @@ function HireMe() {
                   <label className="text-sm font-medium mb-2 block text-gray-300">Last Name</label>
                   <input 
                     type="text" 
+                    name="last_name"
                     placeholder="Shrestha"
                     className="w-full px-4 py-2 rounded-xl bg-black/30 text-white placeholder-gray-400 border border-gray-700 focus:border-purple-500 outline-none transition"
                   />
@@ -83,6 +99,7 @@ function HireMe() {
                 <label className="text-sm font-medium mb-2 block text-gray-300">Email</label>
                 <input 
                   type="email" 
+                  name="user_email"
                   placeholder="your email"
                   className="w-full px-4 py-2 rounded-xl bg-black/30 text-white placeholder-gray-400 border border-gray-700 focus:border-purple-500 outline-none transition"
                 />
@@ -93,6 +110,7 @@ function HireMe() {
                 <label className="text-sm font-medium mb-2 block text-gray-300">Subject</label>
                 <input 
                   type="text" 
+                  name="subject"
                   placeholder="Project Inquiry"
                   className="w-full px-4 py-2 rounded-xl bg-black/30 text-white placeholder-gray-400 border border-gray-700 focus:border-purple-500 outline-none transition"
                 />
@@ -102,6 +120,7 @@ function HireMe() {
               <div>
                 <label className="text-sm font-medium mb-2 block text-gray-300">Message</label>
                 <textarea 
+                  name="message"
                   placeholder="Tell me about your project..."
                   className="w-full px-4 py-3 rounded-xl bg-black/30 text-white placeholder-gray-400 border border-gray-700 focus:border-purple-500 outline-none transition min-h-[120px]"
                 />

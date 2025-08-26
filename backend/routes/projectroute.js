@@ -1,11 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 
 const { addProject, getProject } = require('../controllers/projectcontroller');
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
 
+const upload = multer({ storage: storage });
 
-router.post('/addProject', addProject);
+router.post('/addProject', upload.single('image'), addProject);
 router.get('/getproject', getProject);
 
 

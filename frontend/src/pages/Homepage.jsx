@@ -11,7 +11,9 @@ function Homepage() {
         <div>
             <div className="h-screen">
                 <Header />
-                <Introduction />
+                <div id="home">
+                    <Introduction />
+                </div>
                 <Skills />
                 <div id="project">
                     <ProjectPage />
@@ -20,7 +22,9 @@ function Homepage() {
                     <EducationPage />
                 </div>
                 <About />
-                <HireMe />
+               <div id="hire">
+                 <HireMe />
+               </div>
             </div>
         </div>
     )
