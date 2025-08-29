@@ -21,7 +21,7 @@ function AdminExperience() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:5000/experience/addExperience", formData);
+            const response = await axios.post("/experience/addExperience", formData);
             console.log(response.data);
             toast.success("Experience added successfully!");
             setFormData({

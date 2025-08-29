@@ -8,7 +8,7 @@ function EducationPage() {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/education/getEducation");
+        const response = await axios.get("/education/getEducation");
         setEducation(response.data);
       } catch (error) {
         console.log(error);

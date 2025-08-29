@@ -20,7 +20,7 @@ function AdminEducation() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/education/addEducation", formData);
+            const response = await axios.post("/education/addEducation", formData);
             console.log("Education added:", response.data);
             toast.success("Education added successfully");
             setFormData({

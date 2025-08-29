@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/Projectcard";
 
 const ProjectPage = () => {
   const [projects,setProjects] = useState([]);
@@ -8,7 +8,7 @@ const ProjectPage = () => {
   useEffect(()=>{
     const fetchProjects = async()=>{
       try {
-        const response = await axios.get('http://localhost:5000/project/getproject');
+        const response = await axios.get('/project/getproject');
         setProjects(response.data);
       } catch (error) {
         console.log(error);

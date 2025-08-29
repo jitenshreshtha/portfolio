@@ -10,7 +10,7 @@ function ProjectCard({ project }) {
       {image && (
         <div className="relative overflow-hidden">
           <img
-            src={`http://localhost:5000/uploads/${image}`}
+            src={`/uploads/${image}`}
             alt={title}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
           />
