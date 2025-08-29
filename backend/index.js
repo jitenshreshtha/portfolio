@@ -16,8 +16,7 @@ const app = express();
 
 app.use(express.json());
 // const _dirname = path.dirname("");
-const buildpath = path.join(__dirname,"../frontend/dist");
-app.use(express.static(buildpath));
+
 app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -33,7 +32,10 @@ app.use('/experience', experienceroute);
 app.use('/project', projectroute);
 
 
-app.get('*', (req, res) => {
+
+const buildpath = path.join(__dirname,"../frontend/dist");
+app.use(express.static(buildpath));
+app.get(/\/(.*)/, (req, res) => {
     res.sendFile(path.join(buildpath, 'index.html'));
 });
 
