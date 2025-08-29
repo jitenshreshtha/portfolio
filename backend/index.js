@@ -35,9 +35,7 @@ app.use('/project', projectroute);
 
 const buildpath = path.join(__dirname,"../frontend/dist");
 app.use(express.static(buildpath));
-app.get(/\/(.*)/, (req, res) => {
-    res.sendFile(path.join(buildpath, 'index.html'));
-});
+
 
 app.listen(process.env.PORT, () => {
     console.log("Server is running on port", process.env.PORT);
