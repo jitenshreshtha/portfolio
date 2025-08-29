@@ -32,6 +32,11 @@ app.use('/education', educationroute);
 app.use('/experience', experienceroute);
 app.use('/project', projectroute);
 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildpath, 'index.html'));
+});
+
 app.listen(process.env.PORT, () => {
     console.log("Server is running on port", process.env.PORT);
 })
