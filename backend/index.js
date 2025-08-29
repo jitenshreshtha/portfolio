@@ -15,6 +15,9 @@ const app = express();
 
 
 app.use(express.json());
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname,"../frontend/dist");
+app.use(express.static(buildpath));
 app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
