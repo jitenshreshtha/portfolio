@@ -16,9 +16,9 @@ function Introduction() {
             />
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 px-6 max-w-6xl mx-auto animate-fade-in">
                 <div className="text-center md:text-left flex-1">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                        Hi, I’m{" "}
-                        <span className="text-gradient">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+                        Hi, I'm{" "}
+                        <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 bg-clip-text text-transparent">
                             Jiten
                         </span>
                     </h1>
