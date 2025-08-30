@@ -39,7 +39,7 @@ function Introduction() {
                             className="px-8 py-3 text-lg rounded-2xl font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white shadow-lg hover:opacity-90 transition-all duration-300 glow-effect">
                             View My Work
                         </button>
-                        <a href="/Jiten_Shreshtha_FullStack_Resume.docx" className="px-8 py-3 text-lg rounded-2xl font-semibold border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
+                        <a href="/Full_Stack.docx" className="px-8 py-3 text-lg rounded-2xl font-semibold border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300">
                             Download CV
                         </a>
                     </div>
